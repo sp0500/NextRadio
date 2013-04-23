@@ -1,0 +1,54 @@
+#Mozart
+mplayer -ao oss -cache 256 http://listen.radionomy.com/Radio-Mozart < /dev/null &
+#Mozart-piano
+mplayer -ao oss -cache 256 http://listen.radionomy.com/abacusfm-mozart-piano < /dev/null &
+#Beethoven
+mplayer -ao oss -cache 256 http://listen.radionomy.com/beethoven-radio  < /dev/null &
+#HITFM
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000035 < /dev/null &
+#台北之音
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000036 < /dev/null &
+#IC 之音
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000037 < /dev/null &
+#飛碟
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000072 < /dev/null &
+#ICRT
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000038 < /dev/null &
+#KISS RADIO 網路音樂台
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000042 < /dev/null &
+#POP Radio 917台北流行音樂電台
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000080 < /dev/null &
+#中廣流行網
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000009 < /dev/null &
+#中廣音樂網i radio
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000007 < /dev/null &
+#台北愛樂
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000018 < /dev/null &
+#奇美古典音樂網
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000014 < /dev/null &
+#環宇廣播
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000020 < /dev/null &
+#NEWS98新聞網
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000073 < /dev/null &
+#中廣新聞網
+mplayer -ao oss -cache 256 http://bcr.media.hinet.net/RA000008 < /dev/null &
+#BBC radio 1
+mplayer -ao oss -cache 256 -playlist http://www.bbc.co.uk/radio/listen/live/r1.asx < /dev/null &
+#BBC radio 2
+mplayer -ao oss -cache 256 -playlist http://www.bbc.co.uk/radio/listen/live/r2.asx < /dev/null &
+#BBC radio 3
+mplayer -ao oss -cache 256 -playlist http://www.bbc.co.uk/radio/listen/live/r3.asx < /dev/null &
+#BBC radio 4
+mplayer -ao oss -cache 256 -playlist http://www.bbc.co.uk/radio/listen/live/r4.asx < /dev/null &
+#BBC radio 5
+mplayer -ao oss -cache 256 -playlist http://www.bbc.co.uk/radio/listen/live/r5.asx < /dev/null &
+#BBC radio 6
+mplayer -ao oss -cache 256 -playlist http://www.bbc.co.uk/radio/listen/live/r6.asx < /dev/null &
+#BBC Asian Network
+mplayer -ao oss -cache 256 -playlist http://www.bbc.co.uk/radio/listen/live/ran.asx < /dev/null &
+#SKY FM Solo Panio
+mplayer -ao oss -cache 256 -playlist http://listen.sky.fm/public1/solopiano.pls < /dev/null &
+#SKY FM Mostly Classical
+mplayer -ao oss -cache 256 -playlist http://listen.sky.fm/public1/classical.pls < /dev/null &
+#SKY FM Classical Guitar
+mplayer -ao oss -cache 256 -playlist http://listen.sky.fm/public1/guitar.pls < /dev/null &
