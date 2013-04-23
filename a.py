@@ -144,5 +144,4 @@ while 1:
             
         if station >= 0 and station <= max_stations :
             current_station = station
-            player.stdin.write("quit\n");
             player = PlayRadio (current_station)
