@@ -21,7 +21,7 @@ import socket, re, os, subprocess
 from subprocess import Popen, PIPE
 
 def PlayRadio(station):
-    print stationlist[station]
+    print station, stationlist[station]
     os.system("killall " + "mplayer");
     if 'pls' in stationlist[station] or 'asx' in stationlist[station]:
         Play_station = "mplayer -ao oss -slave -quiet -cache 256 -playlist " + stationlist[station].rstrip("\n") + " < /dev/null &"
@@ -81,7 +81,6 @@ for line in fd:
     else:
        stationlist.append(line)
        i = i+1
-
 fd.close()
 
 max_stations = i-1
