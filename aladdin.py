@@ -17,7 +17,7 @@
 #              Reorganized
 #              Enabled IR keys Play,Favor,Home
 
-import socket, re, os, subprocess, time
+import socket, re, os, subprocess, time, urllib
 from subprocess import Popen, PIPE
 
 def Say_station(st):
@@ -92,11 +92,24 @@ max_stations = 0
 current_station = 0
 sockfile = '/dev/lircd'
 
+# Get a file-like object for the Python Web site's home page.
+f = urllib.urlopen("http://www.studioclassroom.com/default.php")
+# Read from the object, storing the page's contents in 's'.
+s = f.read()
+f.close()
+
+obj = re.findall(r'href=\"(http://203.69.69.81/[\s\S]+?\.wma)', s)
+for j in range(len(obj)):
+    stationlist.append(obj[j])
+    print obj[j]
+    i = i+1
+
+
 fd = open ("/root/NextRadio/all.pls","r")
 for line in fd:
     msg = re.search('^#',line)
     if msg:
-       print "."
+       pass
     else:
        stationlist.append(line)
        i = i+1
