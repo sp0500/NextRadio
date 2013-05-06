@@ -122,8 +122,9 @@ stationlist.append(obj_baa[1])
 stationlist.append(obj_ada[3])
 stationlist.append(obj_ada[2])
 stationlist.append(obj_ada[1])
+stationlist.append(obj_lta[3])
 
-i = 9;
+i = 10;
 print stationlist
 
 today = os.popen('date +%Y%m%d').read()
