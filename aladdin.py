@@ -94,37 +94,47 @@ f = urllib.urlopen("http://lt.studioclassroom.com/LT-RaDio.php")
 s = f.read()
 f.close()
 obj_lta = re.findall(r'href[\s]+=[\s]+?\"(mms://203.69.69.81/.+?lta.+?\.wma)\">?', s)
-for i in range(len(obj_lta)):
-    obj_lta[i] = obj_lta[i].replace("mms","http")
+if (obj_lta):
+    for i in range(len(obj_lta)):
+        obj_lta[i] = obj_lta[i].replace("mms","http")
 
 # Get Studio Classroom
 f = urllib.urlopen("http://sc.studioclassroom.com/Sc-rD.php")
 s = f.read()
 f.close()
 obj_baa = re.findall(r'href[\s]+=[\s]+?\"(mms://203.69.69.81/.+?baa.+?\.wma)\">?', s)
-for i in range(len(obj_baa)):
-    obj_baa[i] = obj_baa[i].replace("mms","http")
+if (obj_baa):
+    for i in range(len(obj_baa)):
+        obj_baa[i] = obj_baa[i].replace("mms","http")
 
 # Get Advenced
 f = urllib.urlopen("http://ad.studioclassroom.com/Ad-RAd.php")
 s = f.read()
 f.close()
 obj_ada = re.findall(r'href[\s]+=[\s]+?\"(mms://203.69.69.81/.+?ada.+?\.wma)\">?', s)
-for i in range(len(obj_ada)):
-    obj_ada[i] = obj_ada[i].replace("mms","http")
+if (obj_ada):
+    for i in range(len(obj_ada)):
+        obj_ada[i] = obj_ada[i].replace("mms","http")
 
-stationlist.append(obj_lta[3])
-stationlist.append(obj_lta[2])
-stationlist.append(obj_lta[1])
-stationlist.append(obj_baa[3])
-stationlist.append(obj_baa[2])
-stationlist.append(obj_baa[1])
-stationlist.append(obj_ada[3])
-stationlist.append(obj_ada[2])
-stationlist.append(obj_ada[1])
-stationlist.append(obj_lta[3])
+if obj_lta:
+    stationlist.append(obj_lta[3])
+    stationlist.append(obj_lta[2])
+    stationlist.append(obj_lta[1])
+    i = i + 3
+if obj_baa:
+    stationlist.append(obj_baa[3])
+    stationlist.append(obj_baa[2])
+    stationlist.append(obj_baa[1])
+    i = i + 3
+if obj_ada:
+    stationlist.append(obj_ada[3])
+    stationlist.append(obj_ada[2])
+    stationlist.append(obj_ada[1])
+    i = i + 3
+if obj_lta:
+    stationlist.append(obj_lta[3])
+    i = i + 1
 
-i = 10;
 print stationlist
 
 today = os.popen('date +%Y%m%d').read()
