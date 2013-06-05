@@ -90,16 +90,16 @@ current_station = 0
 sockfile = '/dev/lircd'
 
 # Get LTE
-f = urllib.urlopen("http://lt.studioclassroom.com/LT-RaDio.php")
+f = urllib.urlopen("http://aladdinsip.no-ip.org/lt.html")
 s = f.read()
 f.close()
-obj_lta = re.findall(r'href[\s]+=[\s]+?\"(mms://203.69.69.81/.+?lta.+?\.wma)\">?', s)
+obj_lta = re.findall(r'href[\s]*=[\s]*?\"(mms://203.69.69.81/.+?lta.+?\.wma)\">?', s)
 if (obj_lta):
     for i in range(len(obj_lta)):
         obj_lta[i] = obj_lta[i].replace("mms","http")
 
 # Get Studio Classroom
-f = urllib.urlopen("http://sc.studioclassroom.com/Sc-rD.php")
+f = urllib.urlopen("http://aladdinsip.no-ip.org/sc.html")
 s = f.read()
 f.close()
 obj_baa = re.findall(r'href[\s]+=[\s]+?\"(mms://203.69.69.81/.+?baa.+?\.wma)\">?', s)
@@ -108,23 +108,24 @@ if (obj_baa):
         obj_baa[i] = obj_baa[i].replace("mms","http")
 
 # Get Advenced
-f = urllib.urlopen("http://ad.studioclassroom.com/Ad-RAd.php")
+f = urllib.urlopen("http://aladdinsip.no-ip.org/ad.html")
 s = f.read()
 f.close()
 obj_ada = re.findall(r'href[\s]+=[\s]+?\"(mms://203.69.69.81/.+?ada.+?\.wma)\">?', s)
+print obj_ada
 if (obj_ada):
     for i in range(len(obj_ada)):
         obj_ada[i] = obj_ada[i].replace("mms","http")
 
 if obj_lta:
-    stationlist.append(obj_lta[3])
+    stationlist.append(obj_lta[0])
     stationlist.append(obj_lta[2])
     stationlist.append(obj_lta[1])
     i = i + 3
 if obj_baa:
-    stationlist.append(obj_baa[3])
     stationlist.append(obj_baa[2])
     stationlist.append(obj_baa[1])
+    stationlist.append(obj_baa[0])
     i = i + 3
 if obj_ada:
     stationlist.append(obj_ada[3])
@@ -132,7 +133,7 @@ if obj_ada:
     stationlist.append(obj_ada[1])
     i = i + 3
 if obj_lta:
-    stationlist.append(obj_lta[3])
+    stationlist.append(obj_lta[0])
     i = i + 1
 
 print stationlist
