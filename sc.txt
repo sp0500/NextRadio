@@ -1,0 +1,8 @@
+firefox view-source:http://sc.studioclassroom.com/Sc-rD.php
+
+firefox view-source:http://lt.studioclassroom.com/LT-RaDio.php
+
+firefox view-source:http://ad.studioclassroom.com/Ad-RAd.php
+
+scp -P 13022 *.html root@localhost:/var/www
+scp *.html root@sip:/var/www
