@@ -91,20 +91,33 @@ current_station = 0
 sockfile = '/dev/lircd'
 
 # Get LTE
-#f = urllib.urlopen("http://aladdinsip.no-ip.org/lt.html")
-f = urllib.urlopen("http://lt.studioclassroom.com/LT-RaDio.php")
+f = urllib.urlopen("http://aladdinsip.no-ip.org/sc.html")
+#f = urllib.urlopen("http://lt.studioclassroom.com/LT-RaDio.php")
 s = f.read()
 f.close()
-obj_lta = re.findall(r'href[\s]*=[\s]*?\"(mms://203.69.69.81/.+?lta.+?\.wma)\">?', s)
-if (obj_lta):
-    for i in range(len(obj_lta)):
-        obj_lta[i] = obj_lta[i].replace("mms","http")
-
+obj_lta = re.findall(r'(http://203.69.69.81/.+?lta.+?\.wma)', s)
 if (obj_lta):
     print 'Lta = ', obj_lta
-    stationlist.append(obj_lta[0])
-    i = i + 1
+    for j in range(len(obj_lta)):
+        stationlist.append(obj_lta[j])
+        i = i + 1
 
+obj_baa = re.findall(r'(http://203.69.69.81/.+?baa.+?\.wma)', s)
+if (obj_baa):
+    print 'Baa = ', obj_baa
+    for j in range(len(obj_baa)):
+        stationlist.append(obj_baa[j])
+        i = i + 1
+
+obj_ada = re.findall(r'(http://203.69.69.81/.+?ada.+?\.wma)', s)
+if (obj_ada):
+    print 'Ada = ', obj_ada
+    for j in range(len(obj_ada)):
+        stationlist.append(obj_ada[j])
+        i = i + 1
+
+
+stationlist.append(obj_lta[0])
 print stationlist
 
 today = os.popen('date +%Y%m%d').read()
