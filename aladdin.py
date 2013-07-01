@@ -120,7 +120,7 @@ if (obj_ada):
         i = i + 1
 
 
-stationlist.append(obj_lta[0])
+stationlist.append(obj_baa[0])
 print stationlist
 
 today = os.popen('date +%Y%m%d').read()
