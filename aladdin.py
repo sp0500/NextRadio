@@ -95,7 +95,7 @@ f = urllib.urlopen("http://aladdinsip.no-ip.org/sc.html")
 #f = urllib.urlopen("http://lt.studioclassroom.com/LT-RaDio.php")
 s = f.read()
 f.close()
-obj_lta = re.findall(r'(mms://203.69.69.81/.+?lta.+?\.wma)', s)
+obj_lta = re.findall(r'(mms://203.69.69.81/studio/[0-9]+lta.+?\.wma)', s)
 if (obj_lta):
     print 'Lta = ', obj_lta
     for j in range(len(obj_lta)):
@@ -103,7 +103,7 @@ if (obj_lta):
         stationlist.append(obj_lta[j])
         i = i + 1
 
-obj_baa = re.findall(r'(mms://203.69.69.81/.+?baa.+?\.wma)', s)
+obj_baa = re.findall(r'(mms://203.69.69.81/studio/[0-9]+?baa.+?\.wma)', s)
 if (obj_baa):
     print 'Baa = ', obj_baa
     for j in range(len(obj_baa)):
@@ -111,7 +111,7 @@ if (obj_baa):
         stationlist.append(obj_baa[j])
         i = i + 1
 
-obj_ada = re.findall(r'(mms://203.69.69.81/.+?ada.+?\.wma)', s)
+obj_ada = re.findall(r'(mms://203.69.69.81/studio/[0-9]+?ada.+?\.wma)', s)
 if (obj_ada):
     print 'Ada = ', obj_ada
     for j in range(len(obj_ada)):
