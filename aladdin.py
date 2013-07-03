@@ -98,7 +98,7 @@ f.close()
 obj_lta = re.findall(r'(mms://203.69.69.81/studio/[0-9]+lta.+?\.wma)', s)
 if (obj_lta):
     print 'Lta = ', obj_lta
-    for j in range(len(obj_lta)):
+    for j in range (3):
         obj_lta[j] = obj_lta[j].replace("mms","http")
         stationlist.append(obj_lta[j])
         i = i + 1
@@ -106,7 +106,7 @@ if (obj_lta):
 obj_baa = re.findall(r'(mms://203.69.69.81/studio/[0-9]+?baa.+?\.wma)', s)
 if (obj_baa):
     print 'Baa = ', obj_baa
-    for j in range(len(obj_baa)):
+    for j in range (3):
         obj_baa[j] = obj_baa[j].replace("mms","http")
         stationlist.append(obj_baa[j])
         i = i + 1
@@ -114,7 +114,7 @@ if (obj_baa):
 obj_ada = re.findall(r'(mms://203.69.69.81/studio/[0-9]+?ada.+?\.wma)', s)
 if (obj_ada):
     print 'Ada = ', obj_ada
-    for j in range(len(obj_ada)):
+    for j in range (3):
         obj_ada[j] = obj_ada[j].replace("mms","http")
         stationlist.append(obj_ada[j])
         i = i + 1
