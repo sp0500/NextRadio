@@ -39,9 +39,9 @@ def PlayRadio(station):
     #Say_station(station)
     time.sleep(1)
     if 'pls' in stationlist[station] or 'asx' in stationlist[station]:
-        Play_station = "mplayer -ao oss -slave -quiet -cache 256 " + "-cache-min 10" + prompt + " -playlist " + stationlist[station].rstrip("\n") + " < /dev/null &"
+        Play_station = "mplayer -ao oss -slave -quiet -cache 256 " + "-loop 0" + "-cache-min 10" + prompt + " -playlist " + stationlist[station].rstrip("\n") + " < /dev/null &"
     else:
-        Play_station = "mplayer -ao oss -slave -quiet -cache 256 " + "-cache-min 10" + prompt + " " + stationlist[station].rstrip("\n") + " < /dev/null &"
+        Play_station = "mplayer -ao oss -slave -quiet -cache 256 " + "-loop 0" + "-cache-min 10" + prompt + " " + stationlist[station].rstrip("\n") + " < /dev/null &"
     print Play_station
     player = subprocess.Popen(Play_station.split(" "), stdin=PIPE, stdout=PIPE, stderr=PIPE)
     return player
