@@ -9,7 +9,7 @@
 #
 # Changes Logs:
 # [2013-04-20] By A-Lang
-#              Replaced the lircrc with the mplayer's slave mode
+#              Replaced the lircrc with the mplayer's subordinate mode
 #              Added the audio volume control
 #              Added the Mute,Power keys function
 #
@@ -39,9 +39,9 @@ def PlayRadio(station):
     #Say_station(station)
     time.sleep(1)
     if 'pls' in stationlist[station] or 'asx' in stationlist[station]:
-        Play_station = "mplayer -ao oss -slave -quiet -cache 256 " + "-loop 0 " + "-cache-min 10" + prompt + " -playlist " + stationlist[station].rstrip("\n") + " < /dev/null &"
+        Play_station = "mplayer -ao oss -subordinate -quiet -cache 256 " + "-loop 0 " + "-cache-min 10" + prompt + " -playlist " + stationlist[station].rstrip("\n") + " < /dev/null &"
     else:
-        Play_station = "mplayer -ao oss -slave -quiet -cache 256 " + "-loop 0 " + "-cache-min 10" + prompt + " " + stationlist[station].rstrip("\n") + " < /dev/null &"
+        Play_station = "mplayer -ao oss -subordinate -quiet -cache 256 " + "-loop 0 " + "-cache-min 10" + prompt + " " + stationlist[station].rstrip("\n") + " < /dev/null &"
     print Play_station
     player = subprocess.Popen(Play_station.split(" "), stdin=PIPE, stdout=PIPE, stderr=PIPE)
     return player
