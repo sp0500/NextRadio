@@ -16,6 +16,8 @@
 #              Sky.FM and BBC Radio supported
 #              Reorganized
 #              Enabled IR keys Play,Favor,Home
+###
+###
 
 import socket, re, os, subprocess
 from subprocess import Popen, PIPE
@@ -90,7 +92,7 @@ if os.path.exists('/root/NextRadio/favor.txt'):
     favor = int(fd.readline())
     fd.close()
 else:
-    favor = 0 
+    favor = 0
 current_station = favor
 player = PlayRadio (current_station)
 client_socket = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
@@ -99,11 +101,11 @@ client_socket.connect(sockfile);
 while 1:
     station = current_station
     key = ReadKey()
-    if power == 0: 
+    if power == 0:
         if key == 2000: #power key
             player = PlayRadio (current_station)
             power = 1
-            continue   
+            continue
     elif power == 1:
         if key == 2000: #power key
             player.stdin.write("quit\n");
@@ -140,7 +142,12 @@ while 1:
             station = max_stations
         elif station > max_stations:
             station = 0
-            
+
         if station >= 0 and station <= max_stations :
             current_station = station
             player = PlayRadio (current_station)
+
+
+
+
+
