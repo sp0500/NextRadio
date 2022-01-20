@@ -17,7 +17,9 @@
 #              Reorganized
 #              Enabled IR keys Play,Favor,Home
 ###
-###
+##
+
+######
 
 import socket, re, os, subprocess
 from subprocess import Popen, PIPE
